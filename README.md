@@ -185,7 +185,7 @@ permissions and network configuration.
 *1️⃣1️⃣ SSH Server Installation*
 
 
-![SSH Install](11-SSH-Install_png.png)
+![SSH Install](11-SSH-Install.png)
 
 
 > Installed openssh-server package using apt
