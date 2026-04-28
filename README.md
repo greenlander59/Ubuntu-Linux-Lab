@@ -24,6 +24,11 @@ permissions and network configuration.
 | Ping & Connectivity Testing | ✅ Done |
 | Routing Table (ip route) | ✅ Done |
 | DNS Lookup (nslookup) | ✅ Done |
+| User & Group Management | ✅ Done |
+| sudo & Root Access | ✅ Done |
+| Package Management (apt) | ✅ Done |
+| SSH Server & Remote Access | ✅ Done |
+| Firewall Management (ufw) | ✅ Done |
 
 ---
 
@@ -111,13 +116,152 @@ permissions and network configuration.
 
 ---
 
+### 👤 User & Group Management
+
+*6️⃣ User Created*
+
+
+![User Created](06-User-Created.png)
+
+
+> Created new user john using adduser command
+> Verified with cat /etc/passwd | grep john showing
+> john's home directory and shell assigned successfully
+
+---
+
+*7️⃣ Group Membership*
+
+
+![Group Membership](07-Group-Membership.png)
+
+
+> Created group itteam and added john to it
+> groups john shows john : john sudo itteam
+> proving successful group assignment
+
+---
+
+*8️⃣ sudo & Root Access*
+
+
+![Sudo Access](08-Sudo-Access.png)
+
+
+> Added john to sudo group for admin privileges
+> sudo whoami returns root confirming
+> john has full administrative access
+
+---
+
+### 📦 Package Management
+
+*9️⃣ Package Update (apt update)*
+
+
+![Package Update](09-Package-Update.png)
+
+
+> Ran sudo apt update to refresh package lists
+> fetching latest packages from Ubuntu repositories
+> showing 450 packages available for upgrade
+
+---
+
+*🔟 net-tools Installation (ifconfig)*
+
+
+![ifconfig](10-ifconfig-nettools.png)
+
+
+> Installed net-tools package using sudo apt install
+> Verified with ifconfig showing network interface
+> enp0s3 with IP 10.0.2.15 and loopback interface
+
+---
+
+### 🔐 SSH Remote Access
+
+*1️⃣1️⃣ SSH Server Installation*
+
+
+![SSH Install](11-SSH-Install_png.png)
+
+
+> Installed openssh-server package using apt
+> SSH client, server and sftp-server all installed
+> ready for secure remote connections on port 22
+
+---
+
+*1️⃣2️⃣ SSH Service Running*
+
+
+![SSH Running](12-SSH-Running.png)
+
+
+> systemctl status ssh shows Active: active (running)
+> SSH server listening on port 22 for both
+> IPv4 and IPv6 connections
+
+---
+
+*1️⃣3️⃣ SSH Port 22 Listening*
+
+
+![SSH Port](13-SSH-Port-22.png)
+
+
+> Verified SSH connection using ssh msaqib@127.0.0.1
+> Accepted host fingerprint and authenticated
+> successfully with password
+
+---
+
+*1️⃣4️⃣ SSH Connection Success*
+
+
+![SSH Connection](14-SSH-Connection.png)
+
+
+> Successfully connected via SSH showing
+> Welcome to Ubuntu 22.04.4 LTS message
+> proving SSH remote access fully working
+
+---
+
+### 🔥 Firewall (ufw)
+
+*1️⃣5️⃣ Firewall Status & SSH Rule*
+
+
+![Firewall Status](15-Firewall-Status.png)
+
+
+> Enabled ufw firewall with sudo ufw enable
+> Added SSH rule with sudo ufw allow ssh
+> Status shows port 22/tcp ALLOW IN from Anywhere
+
+---
+
+*1️⃣6️⃣ Firewall Rules — Ports 22, 80, 443*
+
+
+![Firewall Rules](16-Firewall-Rules.png)
+
+
+> Added rules for HTTP port 80 and HTTPS port 443
+> ufw status numbered shows all 6 active rules
+> allowing SSH, HTTP and HTTPS traffic
+
+---
+
 ## 🎯 Skills Demonstrated
-- Linux Terminal & Command Line Interface (CLI)
-- File System Navigation & Management
-- File Creation & Text Editing (nano)
-- Linux File Permissions (chmod)
-- Network Interface Configuration (ip a)
-- Internet Connectivity Testing (ping)
-- Routing Table Analysis (ip route)
-- DNS Resolution & Troubleshooting (nslookup)
-- VirtualBox Linux VM Setup & Management
+- Linux User & Group Management
+- sudo & Root Privilege Management
+- Package Management with apt
+- Network Interface Configuration
+- SSH Server Installation & Configuration
+- Remote Access via SSH
+- Firewall Management with ufw
+- Port Management & Security Rules
